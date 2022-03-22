@@ -57,6 +57,4 @@ content: [
 
 <br/>
 
-<p style="text-align:center;">
-    <img src="./demo.gif" />
-</p>
+<img src="https://i.ibb.co/5KJwt5B/add-Location.gif" style="width:100%;"/>
