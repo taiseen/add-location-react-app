@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { PlaceContext } from "../context";
+// import { useContext } from "react";
+// import { PlaceContext } from "../context";
 
 const EditPlace = ({editModal, editLocation}) => {
 
-    const {editPlace } = useContext(PlaceContext);
+    // const {editPlace } = useContext(PlaceContext);
 
 
     return (

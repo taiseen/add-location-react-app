@@ -1,6 +1,6 @@
-import { createContext, useContext, useEffect, useRef, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { createContext, useContext, useRef, useState } from "react";
 import FavoriteContext from "./FavoriteContext";
+import { v4 as uuidv4 } from 'uuid';
 
 const PlaceContext = createContext();
 
