@@ -14,8 +14,7 @@ const AllPlaces = () => {
     <section className="mt-12 md:mt-16 p-4">
 
       <h1 className="text-3xl md:text-4xl mb-6 mt-4"> All Places... </h1>
-
-
+      
       {
         allLocations.length > 0
           ? < div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

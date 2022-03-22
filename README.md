@@ -15,6 +15,10 @@
     - (for temporary stored data like : array of object)
 
 * connect to FireBase DB 
+* using of tost effect for notifications 
+* using of tool-tip effect for button hover 
+
+
 
 ## Project is created by React `Yarn`
 
@@ -26,6 +30,8 @@
 * npx tailwindcss init -p
 * yarn add uuid
 * yarn add react-toastify
+* yarn add @tippyjs/react
+
 
 this `-D` switch create `devDependencies` section at `package.json` file
 

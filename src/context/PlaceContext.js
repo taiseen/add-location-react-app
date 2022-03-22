@@ -10,7 +10,6 @@ export const PlaceContextProvider = (props) => {
 
     const { removeFav } = useContext(FavoriteContext);
 
-
     const locations = [
         {
             id: uuidv4(),
@@ -37,7 +36,7 @@ export const PlaceContextProvider = (props) => {
     ]
 
     const [allLocations, setAllLocations] = useState(locations);
-    const [editInfo, setEditInfo] = useState();
+    const [editInfo, setEditInfo] = useState([]);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isEditOpen, setIsEditOpen] = useState(false);
@@ -49,7 +48,7 @@ export const PlaceContextProvider = (props) => {
     // add new location, according to user input...
     const addLocationHandler = (location) => {
         setAllLocations([...allLocations, location]);
-        toast.success("Place added successfully... 😎", { autoClose: 3000 , theme: "colored"});
+        toast.success("Place added successfully... 😎", { autoClose: 3000, theme: "colored" });
     }
 
     // user get pop-up dialog box for confirming... delete location... 
@@ -63,7 +62,7 @@ export const PlaceContextProvider = (props) => {
         if (value) {
             removeFav(idRef.current)
             setAllLocations(allLocations.filter(l => l.id !== idRef.current));
-            toast.info("Delete successful...", { autoClose: 3000 , theme: "colored"});
+            toast.info("Delete successful...", { autoClose: 3000, theme: "colored" });
             setIsModalOpen(!isModalOpen);
         } else {
             setIsModalOpen(!isModalOpen);
@@ -75,18 +74,8 @@ export const PlaceContextProvider = (props) => {
         setIsEditOpen(!isEditOpen);
         idRef.current = id;
         obj = allLocations.find(l => l.id === id);
-        console.log(obj)
-        setEditInfo(obj);
+        setEditInfo([...editInfo, obj]);
         console.log(editInfo)
-
-        // if (obj === null) {
-        //     setEditInfo(obj);
-
-        //     console.log(editInfo)
-        // } else {
-        //     console.log(editInfo)
-        // }
-
     }
 
 

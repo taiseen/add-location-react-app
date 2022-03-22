@@ -2,7 +2,8 @@ import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { PlaceContext } from "../context";
 import { v4 as uuidv4 } from 'uuid';
-
+import Tippy from "@tippy.js/react";
+import 'tippy.js/dist/tippy.css';
 
 const PlaceInput = () => {
 
@@ -85,9 +86,11 @@ const PlaceInput = () => {
       </div>
 
       <div className="">
-        <button className="px-4 py-2 bg-gray-300 rounded shadow duration-300 
+        <Tippy content="Just clear all fields value...">
+          <button className="px-4 py-2 bg-gray-300 rounded shadow duration-300 
         hover:bg-red-500 hover:text-white" onClick={clearAll}> Clear All </button>
-
+        </Tippy>
+        
         <button className="px-4 py-2 bg-gray-300 rounded shadow duration-300 float-right
         hover:bg-green-500 hover:text-white" > Add Place </button>
       </div>
