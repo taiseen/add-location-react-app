@@ -1,13 +1,13 @@
 import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { PlaceContext } from "../context/PlaceContext";
+import { PlaceContext } from "../context";
 import { v4 as uuidv4 } from 'uuid';
 
 
 const PlaceInput = () => {
 
   const navigate = useNavigate();
-  const { addLocationHandler } = useContext(PlaceContext);
+  const { addLocation } = useContext(PlaceContext);
 
   const titleRef = useRef();
   const imageRef = useRef();
@@ -43,7 +43,7 @@ const PlaceInput = () => {
       description
     };
 
-    addLocationHandler(place);
+    addLocation(place);
     clearAll();
     goTo();
   }

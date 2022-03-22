@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { PlaceContext } from "../context/PlaceContext";
+import { FavoriteContext } from "../context";
 
 
 const NavBar = () => {
 
-    const { allLocations } = useContext(PlaceContext);
+    const { favoriteLocation } = useContext(FavoriteContext);
 
     const [toggleNav, setToggleNav] = useState(false);
 
@@ -36,14 +36,14 @@ const NavBar = () => {
                             key={i}
                             to={goTo.link}
                             onClick={() => setToggleNav(!toggleNav)}
-                            className=" bg-red-800 mx-3 my-1 p-2 rounded relative
+                            className=" bg-red-800 mx-3 my-1 p-2 rounded relative 
                             md:bg-transparent md:my-0 md:p-0  
                             hover:text-gray-200 hover:underline decoration-red-300 underline-offset-4 duration-100">
                             {goTo.name}
                             {
-                                allLocations.length > 0 && (i + 1 === links.length) &&
+                                favoriteLocation.length > 0 && (i + 1 === links.length) &&
                                 <span className="ml-1.5 px-2.5 absolute bg-orange-300 rounded-full text-lg text-black">
-                                    {allLocations.length}
+                                    {favoriteLocation.length}
                                 </span>
                             }
                         </Link>

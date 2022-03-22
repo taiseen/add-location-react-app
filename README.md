@@ -1,6 +1,6 @@
 15 - March - 2022
 
-## adding location add based on -> 
+## adding location - based on -> 
 # React + TailwindCSS
 
 ## Features has or Learning Context...

@@ -1,10 +1,14 @@
 import { useContext } from 'react';
-import { Place, Modal } from './../components';
-import { PlaceContext } from '../context/PlaceContext';
+import { Place, DeleteModal, EditPlace } from './../components';
+import { PlaceContext, FavoriteContext } from '../context';
 
 const AllPlaces = () => {
 
-  const { allLocations, isModalOpen, modalHandler, deleteLocationHandler } = useContext(PlaceContext);
+  const { allLocations,
+    isEditOpen, editModal, editLocation,
+    isModalOpen, deleteModal, deleteLocation } = useContext(PlaceContext);
+
+  const { addFav, isFav, removeFav } = useContext(FavoriteContext);
 
   return (
     <section className="mt-12 md:mt-16 p-4">
@@ -14,15 +18,24 @@ const AllPlaces = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           allLocations.map(place => (
-            <Place key={place.id} place={place} deleteLocationHandler={deleteLocationHandler} />
+            <Place
+              key={place.id}
+              place={place}
+              deleteLocation={deleteLocation}
+              editLocation={editLocation}
+              addFav={addFav}
+              isFav={isFav}
+              removeFav={removeFav}
+            />
           ))
         }
       </div>
-
       {
-        isModalOpen && <Modal modalHandler={modalHandler} />
+        isModalOpen && <DeleteModal deleteModal={deleteModal} />
       }
-
+      {
+        isEditOpen && <EditPlace editLocation={editLocation}/>
+      }
     </section>
   )
 }

@@ -1,10 +1,13 @@
-import { createContext, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import FavoriteContext from "./FavoriteContext";
 
-export const PlaceContext = createContext();
+const PlaceContext = createContext();
 
 
-const PlaceContextProvider = (props) => {
+export const PlaceContextProvider = (props) => {
+
+    const { removeFav } = useContext(FavoriteContext);
 
 
     const locations = [
@@ -32,13 +35,14 @@ const PlaceContextProvider = (props) => {
 
     ]
 
-    const [allLocations, setAllLocations] = useState(locations)
+    const [allLocations, setAllLocations] = useState(locations);
+    const [editId, setEditId] = useState();
+
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isEditOpen, setIsEditOpen] = useState(false);
+
     const idRef = useRef();
-
-    console.log(locations)
-    console.table(allLocations)
-
+    let editInfo;
 
     // add new location, according to user input...
     const addLocationHandler = (location) => {
@@ -53,8 +57,9 @@ const PlaceContextProvider = (props) => {
     }
 
     // finally delete location, after user press confirm button...
-    const modalHandler = (value) => {
+    const deleteModalHandler = (value) => {
         if (value) {
+            removeFav(idRef.current)
             setAllLocations(allLocations.filter(l => l.id !== idRef.current));
             setIsModalOpen(!isModalOpen);
         } else {
@@ -62,8 +67,57 @@ const PlaceContextProvider = (props) => {
         }
     }
 
+
+    const editLocationHandler = (id) => {
+        setIsEditOpen(!isEditOpen);
+
+        editInfo = allLocations.find(l => l.id === id);
+        console.log(editInfo)
+        
+        if (editInfo !== null) {
+            setEditId(editInfo);
+            console.log(editId)
+        }else{
+            console.log(editId)
+        }
+
+    }
+
+
+
+    const editModalHandler = (e) => {
+        e.preventDefault()
+        console.log("update value...")
+        // console.log(e)
+
+        // if (e) {
+        //     // console.log(idRef.current)
+        //     // let edit = allLocations.filter(l => l.id === idRef.current)
+        //     // setEditLocation(edit);
+        //     // setIsEditOpen(!isEditOpen);
+
+        //     // console.log(edit)
+        //     // console.log(editLocation)
+
+        // } else {
+        //     setIsEditOpen(!isEditOpen);
+        // }
+    }
+
+    const placeCIX = {
+        allLocations,
+        addLocation: addLocationHandler,
+        isEditOpen,
+        editModal: editModalHandler,
+        editLocation: editLocationHandler,
+        isModalOpen,
+        deleteModal: deleteModalHandler,
+        deleteLocation: deleteLocationHandler,
+    }
+
+
     return (
-        <PlaceContext.Provider value={{ allLocations, addLocationHandler, isModalOpen, modalHandler, deleteLocationHandler }}>
+        <PlaceContext.Provider value={placeCIX}>
 
             {props.children}
 
@@ -71,6 +125,6 @@ const PlaceContextProvider = (props) => {
     );
 };
 
-export default PlaceContextProvider;
+export default PlaceContext;
 
 
