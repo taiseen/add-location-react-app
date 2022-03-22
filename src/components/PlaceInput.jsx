@@ -48,8 +48,6 @@ const PlaceInput = () => {
     goTo();
   }
 
-
-
   return (
     <form onSubmit={handleSubmit}
       className="space-y-3 bg-white w-full md:w-1/2 mx-auto p-4 rounded shadow-md">
@@ -91,7 +89,7 @@ const PlaceInput = () => {
         hover:bg-red-500 hover:text-white" onClick={clearAll}> Clear All </button>
 
         <button className="px-4 py-2 bg-gray-300 rounded shadow duration-300 float-right
-        hover:bg-green-500 hover:text-white"> Add Place </button>
+        hover:bg-green-500 hover:text-white" > Add Place </button>
       </div>
     </form>
   )

@@ -1,6 +1,7 @@
 import { createContext, useContext, useRef, useState } from "react";
 import FavoriteContext from "./FavoriteContext";
 import { v4 as uuidv4 } from 'uuid';
+import { toast } from 'react-toastify';
 
 const PlaceContext = createContext();
 
@@ -16,38 +17,39 @@ export const PlaceContextProvider = (props) => {
             title: 'Living area',
             img: 'https://thumbs.dreamstime.com/b/aerial-view-buildings-capital-city-dhaka-bangladesh-view-mohammadpur-bright-sunny-day-aerial-view-buildings-229193615.jpg',
             address: 'Mohammadpur, Dhaka',
-            description: 'nice place for living...'
+            description: 'Most popular street in dhaka, famous by as hangout tea stalls, nice place for living...'
         },
         {
             id: uuidv4(),
-            title: 'Playground',
-            img: 'https://www.researchgate.net/profile/Faysal-Kabir-Shuvo/publication/321025495/figure/fig6/AS:560089012465670@1510547034482/Upgradation-of-Shyamoli-Pisciculture-Housing-Park-pulls-many-people-from-distant-areas.png',
-            address: 'Shyamoli, Dhaka',
-            description: 'Kids love this playground...'
+            title: 'Yoho National Park',
+            img: 'https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-yoho-national-park-emerald-lake.jpg',
+            address: 'Western Canada, Canada',
+            description: 'Yoho National Park in British Columbia is one of the most beautiful parks in western Canada, '
         },
         {
             id: uuidv4(),
-            title: 'Street Road',
-            img: 'https://bprop-area-guides.s3.amazonaws.com/area-guides/wp-content/uploads/2020/06/Mohammadpur-Cover.jpg',
-            address: 'Asadgate, Dhaka',
-            description: 'Walking road'
+            title: 'Gulf Islands',
+            img: 'https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-gulf-islands.jpg',
+            address: 'Vancouver, Canada',
+            description: 'The Gulf Islands, between the city of Vancouver and Vancouver Island'
         },
 
     ]
 
     const [allLocations, setAllLocations] = useState(locations);
-    const [editId, setEditId] = useState();
+    const [editInfo, setEditInfo] = useState();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isEditOpen, setIsEditOpen] = useState(false);
 
     const idRef = useRef();
-    let editInfo;
+
+    let obj;
 
     // add new location, according to user input...
     const addLocationHandler = (location) => {
-        console.log(location);
-        setAllLocations([...allLocations, location])
+        setAllLocations([...allLocations, location]);
+        toast.success("Place added successfully... 😎", { autoClose: 3000 , theme: "colored"});
     }
 
     // user get pop-up dialog box for confirming... delete location... 
@@ -61,6 +63,7 @@ export const PlaceContextProvider = (props) => {
         if (value) {
             removeFav(idRef.current)
             setAllLocations(allLocations.filter(l => l.id !== idRef.current));
+            toast.info("Delete successful...", { autoClose: 3000 , theme: "colored"});
             setIsModalOpen(!isModalOpen);
         } else {
             setIsModalOpen(!isModalOpen);
@@ -70,16 +73,19 @@ export const PlaceContextProvider = (props) => {
 
     const editLocationHandler = (id) => {
         setIsEditOpen(!isEditOpen);
-
-        editInfo = allLocations.find(l => l.id === id);
+        idRef.current = id;
+        obj = allLocations.find(l => l.id === id);
+        console.log(obj)
+        setEditInfo(obj);
         console.log(editInfo)
-        
-        if (editInfo !== null) {
-            setEditId(editInfo);
-            console.log(editId)
-        }else{
-            console.log(editId)
-        }
+
+        // if (obj === null) {
+        //     setEditInfo(obj);
+
+        //     console.log(editInfo)
+        // } else {
+        //     console.log(editInfo)
+        // }
 
     }
 

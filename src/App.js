@@ -1,8 +1,11 @@
 import { Routes, Route, } from "react-router-dom";
 import { NavBar } from "./components";
 import { AllPlaces, Favorites, NewPlace } from './pages';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
+toast.configure();
 function App() {
 
   return (

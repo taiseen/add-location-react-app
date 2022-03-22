@@ -8,7 +8,7 @@ const EditPlace = ({editModal, editLocation}) => {
 
     return (
         <div className="fixed top-0 bottom-0 right-0 left-0 bg-gray-400/70 flex items-center justify-center">
-            <form className="space-y-3 bg-white w-full md:w-1/2 mx-auto p-4 rounded shadow-md"
+            <div className="space-y-3 bg-white w-full md:w-1/2 mx-auto p-4 rounded shadow-md"
                
             >
         
@@ -54,7 +54,7 @@ const EditPlace = ({editModal, editLocation}) => {
                 onSubmit={editModal}
                 > Update Place </button>
             </div>
-            </form>
+            </div>
         </div>
     )
 }

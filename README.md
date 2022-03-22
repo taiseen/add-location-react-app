@@ -25,6 +25,7 @@
 * yarn add `-D` tailwindcss postcss autoprefixer 
 * npx tailwindcss init -p
 * yarn add uuid
+* yarn add react-toastify
 
 this `-D` switch create `devDependencies` section at `package.json` file
 

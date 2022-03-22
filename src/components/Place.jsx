@@ -20,10 +20,10 @@ const Place = ({ place, deleteLocation, addFav, isFav, removeFav, editLocation }
                 <img src={img} alt={title}
                     className="aspect-video rounded-t w-full object-cover " />
 
-                <div className="py-2 text-xl md:text-2xl">
+                <div className="py-2">
                     <h3 className="text-2xl md:text-3xl capitalize">{title}</h3>
-                    <address className="font-bold">{address}</address>
-                    <p className="capitalize">{description}</p>
+                    <address className="font-bold text-xl">{address}</address>
+                    <p className="capitalize px-4">{description}</p>
                 </div>
 
                 <div className="flex justify-between px-4 mt-4">
