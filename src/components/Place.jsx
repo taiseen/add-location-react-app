@@ -3,7 +3,7 @@ import 'tippy.js/dist/tippy.css';
 
 const Place = ({ place, deleteLocation, addFav, isFav, removeFav, editLocation }) => {
 
-    const { id, title, img, address, description } = place;
+    const { id, title, imgUrl, address, description } = place;
 
     const isAddToFavorite = isFav(id);
 
@@ -19,13 +19,13 @@ const Place = ({ place, deleteLocation, addFav, isFav, removeFav, editLocation }
 
         <div className="bg-gray-300  rounded shadow-md text-center pb-4">
 
-            <img src={img} alt={title}
+            <img src={imgUrl} alt={title}
                 className="aspect-video rounded-t w-full object-cover " />
 
             <div className="py-2">
                 <h3 className="text-2xl md:text-3xl capitalize">{title}</h3>
                 <address className="font-bold text-xl">{address}</address>
-                <p className="capitalize px-4">{description}</p>
+                <p className="px-4">{description}</p>
             </div>
 
             <div className="flex justify-between px-4 mt-4">

@@ -1,17 +1,17 @@
 const MyFavorites = ({ place, removeFav }) => {
 
-  const { id, title, img, address, description } = place;
+  const { id, title, imgUrl, address, description } = place;
 
   return (
     <div className="bg-gray-300  rounded shadow-md text-center pb-4">
 
-      <img src={img} alt={title}
+      <img src={imgUrl} alt={title}
         className="aspect-video rounded-t w-full object-cover " />
 
-      <div className="py-2 text-xl md:text-2xl">
+      <div className="py-2 ">
         <h3 className="text-2xl md:text-3xl capitalize">{title}</h3>
-        <address className="font-bold">{address}</address>
-        <p className="capitalize">{description}</p>
+        <address className="font-bold text-xl">{address}</address>
+        <p className="px-4 capitalize">{description}</p>
       </div>
 
       <div className="text-center px-4 mt-4">

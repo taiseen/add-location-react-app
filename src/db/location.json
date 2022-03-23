@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Lalbagh Kella",
+        "imgUrl": "https://live.staticflickr.com/65535/48530509381_c7eb7d3d24_b.jpg",
+        "address": "Dhaka, Bangladesh",
+        "description": "Ancient Bengali mausoleum in Dhaka, Bangladesh"
+    },
+    {
+        "id": 2,
+        "title": "Opera House",
+        "imgUrl": "https://thumbs.dreamstime.com/b/sydney-opera-house-australia-14210813.jpg",
+        "address": "Sydney, Australia",
+        "description": "The Sydney Opera House in the city of Sydney"
+    },
+    {
+        "id": 3,
+        "title": "Niagara Falls",
+        "imgUrl": "https://thumbs.dreamstime.com/b/niagara-falls-canada-11181263.jpg",
+        "address": "Ontario, Canada",
+        "description": "This is an elevated view of Niagara Falls at Ontario"
+    }
+]

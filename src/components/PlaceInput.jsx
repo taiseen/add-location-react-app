@@ -32,14 +32,14 @@ const PlaceInput = () => {
     e.preventDefault();
 
     const { value: title } = titleRef.current;
-    const { value: img } = imageRef.current;
+    const { value: imgUrl } = imageRef.current;
     const { value: address } = addressRef.current;
     const { value: description } = descRef.current;
 
     const place = {
       id: uuidv4(),
       title,
-      img,
+      imgUrl,
       address,
       description
     };
