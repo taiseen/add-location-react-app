@@ -1,14 +1,15 @@
 import { createContext, useContext, useRef, useState } from "react";
 import FavoriteContext from "./FavoriteContext";
-import { toast } from 'react-toastify';
 import location from '../db/location.json';
+import { toast } from 'react-toastify';
+
 
 const PlaceContext = createContext();
 
 
 export const PlaceContextProvider = (props) => {
 
-    const { removeFav } = useContext(FavoriteContext);
+    const { removeFav, updateAlsoInFav } = useContext(FavoriteContext);
 
     const [allLocations, setAllLocations] = useState(location);
     const [editInfo, setEditInfo] = useState({});
@@ -51,7 +52,8 @@ export const PlaceContextProvider = (props) => {
     // update existing place info
     const editModalHandler = (updateInfo) => {
         setIsEditOpen(!isEditOpen);
-        setAllLocations(allLocations.map(place => place.id === updateInfo.id ? updateInfo : place))
+        setAllLocations(allLocations.map(place => place.id === updateInfo.id ? updateInfo : place));
+        updateAlsoInFav(updateInfo);
     }
 
     const placeCIX = {

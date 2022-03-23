@@ -5,12 +5,13 @@ import { PlaceContext, FavoriteContext } from '../context';
 const AllPlaces = () => {
 
   const { allLocations,
-    isEditOpen, editLocation, setIsEditOpen, editInfo, editModal,
-    isModalOpen, deleteModal, deleteLocation } = useContext(PlaceContext);
+          isModalOpen, deleteModal, deleteLocation,
+          isEditOpen, editModal, editLocation, setIsEditOpen, editInfo} = useContext(PlaceContext);
 
   const { addFav, isFav, removeFav } = useContext(FavoriteContext);
 
   return (
+
     <section className="mt-12 md:mt-16 p-4">
 
       <h1 className="text-3xl md:text-4xl mb-6 mt-4"> All Places... </h1>
@@ -40,6 +41,7 @@ const AllPlaces = () => {
       {
         isModalOpen && <DeleteModal deleteModal={deleteModal} />
       }
+
       {
         isEditOpen &&
         <EditPlace
@@ -49,6 +51,7 @@ const AllPlaces = () => {
           editModal={editModal}
         />
       }
+
     </section >
   )
 }

@@ -21,6 +21,7 @@ const EditPlace = ({ editModal, setIsEditOpen, editInfo }) => {
 
 
     return (
+
         <div className="fixed top-0 bottom-0 right-0 left-0 bg-gray-400/70 flex items-center justify-center">
             {
                 editInfo &&
@@ -29,8 +30,8 @@ const EditPlace = ({ editModal, setIsEditOpen, editInfo }) => {
 
                     <div className="space-y-2">
                         <label htmlFor="title" className="font-bold md:text-lg">Place Title</label>
-                        <input id="title" type="text" name="title"
-                            className="border rounded w-full py-1.5 px-2 md:text-xl outline-orange-300"
+                        <input className="border rounded w-full py-1.5 px-2 md:text-xl outline-orange-300"
+                            id="title" type="text" name="title"
                             value={title}
                             onChange={e => handleEdit(e)}
                         />
@@ -38,8 +39,8 @@ const EditPlace = ({ editModal, setIsEditOpen, editInfo }) => {
 
                     <div className="space-y-2">
                         <label htmlFor="img" className="font-bold md:text-lg">Image URL</label>
-                        <input id="img" type="url" name="imgUrl"
-                            className="border rounded w-full py-1.5 px-2 md:text-xl outline-orange-300"
+                        <input className="border rounded w-full py-1.5 px-2 md:text-xl outline-orange-300"
+                            id="img" type="url" name="imgUrl"
                             value={imgUrl}
                             onChange={e => handleEdit(e)}
                         />
@@ -47,8 +48,8 @@ const EditPlace = ({ editModal, setIsEditOpen, editInfo }) => {
 
                     <div className="space-y-2">
                         <label htmlFor="add" className="font-bold md:text-lg">Address</label>
-                        <input id="add" type="text" name="address"
-                            className="border rounded w-full py-1.5 px-2 md:text-xl outline-orange-300"
+                        <input className="border rounded w-full py-1.5 px-2 md:text-xl outline-orange-300"
+                            id="add" type="text" name="address"
                             value={address}
                             onChange={handleEdit}
                         />
@@ -56,24 +57,20 @@ const EditPlace = ({ editModal, setIsEditOpen, editInfo }) => {
 
                     <div className="space-y-2">
                         <label htmlFor="dec" className="font-bold md:text-lg">Description</label>
-                        <textarea id="dec" name="description"
-                            className="border rounded w-full py-1.5 px-2 md:text-xl outline-orange-300 resize-none h-40"
+                        <textarea className="border rounded w-full py-1.5 px-2 md:text-xl outline-orange-300 resize-none h-40"
+                            id="dec" name="description"
                             value={description}
                             onChange={handleEdit}
                         />
                     </div>
 
                     <div className="flex justify-between">
-                        <button type="button"
-                            className="px-4 py-2 bg-gray-300 rounded shadow duration-300
+                        <button type="button" className="px-4 py-2 bg-gray-300 rounded shadow duration-300
                             hover:bg-blue-500 hover:text-white"
-                            onClick={() => setIsEditOpen(false)}
-                        > cancel </button>
+                            onClick={() => setIsEditOpen(false)}> cancel </button>
 
                         <button type="submit" className="px-4 py-2 bg-gray-300 rounded shadow duration-300
-                        hover:bg-orange-500 hover:text-white"
-
-                        > Update Place </button>
+                        hover:bg-orange-500 hover:text-white"> Update Place </button>
                     </div>
                 </form>
             }

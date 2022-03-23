@@ -19,6 +19,11 @@ export const FavoriteContextProvider = ({ children }) => {
         setFavoriteLocation(prevFavorite => prevFavorite.filter(place => place.id !== id));
     }
 
+    const updateInfoFavoriteHandler = (updateInfo) => {
+        setFavoriteLocation(favoriteLocation.map(place => place.id === updateInfo.id ? updateInfo : place));
+
+    }
+
     const isFavoriteHandler = (id) => favoriteLocation.some(place => place.id === id);
 
     const favoriteCTX = {
@@ -26,6 +31,7 @@ export const FavoriteContextProvider = ({ children }) => {
         isFav: isFavoriteHandler,
         addFav: addToFavoriteHandler,
         removeFav: removeToFavoriteHandler,
+        updateAlsoInFav: updateInfoFavoriteHandler,
     }
 
     return (

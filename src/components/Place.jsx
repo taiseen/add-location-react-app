@@ -64,23 +64,7 @@ const Place = ({ place, deleteLocation, addFav, isFav, removeFav, editLocation }
                                 onClick={() => toggleFavorite()}> add </button>
                         </Tippy>
                 }
-
-
-
-                {/* <Tippy content="Add this place">
-                    <button className="px-4 py-2 bg-gray-400 rounded shadow duration-300 
-                                    hover:bg-green-500 hover:text-white capitalize"
-                        onClick={() => toggleFavorite()}
-                    >
-                        {
-                            isAddToFavorite
-                                ? <span className=" text-red-700"></span>
-                                : 'add to favorite'
-                        }
-                    </button>
-                </Tippy> */}
             </div>
-
         </div>
     )
 }

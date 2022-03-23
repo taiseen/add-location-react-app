@@ -1,9 +1,9 @@
 const DeleteModal = ({ deleteModal }) => {
 
     return (
+        
         <div className="fixed top-0 bottom-0 right-0 left-0 bg-gray-400/70 flex items-center justify-center"
-        // onClick={()=> deleteModal(false)}
-        >
+            onClick={() => deleteModal(false)} >
 
             <div className="bg-white p-8 rounded shadow w-80 text-center">
 

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import { FavoriteContext } from "../context";
+import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
