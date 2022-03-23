@@ -8,9 +8,9 @@ const Favorites = () => {
 
   return (
     
-    <div className="mt-12 md:mt-16 p-4 ">
+    <div className="mt-12 md:mt-16">
 
-      <h1 className="text-3xl md:text-4xl mb-6 mt-4">Favorites...</h1>
+      <h1 className="text-3xl md:text-4xl pb-4 pt-6">Favorites...</h1>
 
       {
         favoriteLocation.length > 0

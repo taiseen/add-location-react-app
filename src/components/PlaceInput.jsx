@@ -56,7 +56,7 @@ const PlaceInput = () => {
       <div className="space-y-2">
         <label htmlFor="title" className="font-bold text-lg">Place Title</label>
         <input id="title" type="text" placeholder="Name of the place"
-          className="border rounded w-full py-1.5 px-2 text-xl outline-orange-300"
+          className="border rounded w-full py-1.5 px-2 text-lg md:text-xl outline-orange-300"
           ref={titleRef} required
         />
       </div>
@@ -64,7 +64,7 @@ const PlaceInput = () => {
       <div className="space-y-2">
         <label htmlFor="img" className="font-bold text-lg">Image URL</label>
         <input id="img" type="url" placeholder="http://www.demo.com/image.jpg"
-          className="border rounded w-full py-1.5 px-2 text-xl outline-orange-300"
+          className="border rounded w-full py-1.5 px-2 text-lg md:text-xl outline-orange-300"
           ref={imageRef} required
         />
       </div>
@@ -72,7 +72,7 @@ const PlaceInput = () => {
       <div className="space-y-2">
         <label htmlFor="add" className="font-bold text-lg">Address</label>
         <input id="add" type="text" placeholder="#Block-1, #Rode-2, Street"
-          className="border rounded w-full py-1.5 px-2 text-xl outline-orange-300"
+          className="border rounded w-full py-1.5 px-2 text-lg md:text-xl outline-orange-300"
           ref={addressRef} required
         />
       </div>
@@ -80,7 +80,7 @@ const PlaceInput = () => {
       <div className="space-y-2">
         <label htmlFor="dec" className="font-bold text-lg">Description</label>
         <textarea id="dec" placeholder="Some info about that place..."
-          className="border rounded w-full py-1.5 px-2 text-xl outline-orange-300 resize-none h-40"
+          className="border rounded w-full py-1.5 px-2 text-lg md:text-xl outline-orange-300 resize-none h-40"
           ref={descRef} required
         />
       </div>

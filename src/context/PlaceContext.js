@@ -22,7 +22,7 @@ export const PlaceContextProvider = (props) => {
     // add new location, according to user input...
     const addLocationHandler = (location) => {
         setAllLocations([...allLocations, location]);
-        toast.success("Place added successfully... 😎", { autoClose: 3000, theme: "colored" });
+        toast.success("Place added successfully... 😎", { theme: "colored" });
     }
 
     // user get pop-up dialog box for confirming... delete location... 
@@ -36,7 +36,7 @@ export const PlaceContextProvider = (props) => {
         if (value) {
             removeFav(idRef.current)
             setAllLocations(allLocations.filter(l => l.id !== idRef.current));
-            toast.info("Place Deleted...", { autoClose: 3000, theme: "colored", position: "bottom-right" });
+            toast.info("Place Deleted...", { theme: "colored", position: "bottom-right" });
             setIsModalOpen(!isModalOpen);
         } else {
             setIsModalOpen(!isModalOpen);
@@ -54,6 +54,7 @@ export const PlaceContextProvider = (props) => {
         setIsEditOpen(!isEditOpen);
         setAllLocations(allLocations.map(place => place.id === updateInfo.id ? updateInfo : place));
         updateAlsoInFav(updateInfo);
+        toast.warning("Place Updated...", { theme: "colored", icon: "✔" });
     }
 
     const placeCIX = {
