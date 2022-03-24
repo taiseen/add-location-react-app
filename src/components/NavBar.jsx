@@ -11,7 +11,7 @@ const NavBar = () => {
 
     const links = [
         { name: 'All Places', link: '/' },
-        { name: 'Add New Places', link: '/new-place' },
+        { name: 'Add New Places', link: '/add-new-place' },
         { name: 'Favorites', link: '/favorites' },
     ]
 

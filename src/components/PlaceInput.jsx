@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { PlaceContext } from "../context";
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import Tippy from "@tippy.js/react";
 import 'tippy.js/dist/tippy.css';
 
@@ -37,7 +37,8 @@ const PlaceInput = () => {
     const { value: description } = descRef.current;
 
     const place = {
-      id: uuidv4(),
+      // use if for local JSON DB... FireBase auto generates id
+      // id: uuidv4(),
       title,
       imgUrl,
       address,

@@ -17,7 +17,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<AllPlaces />} />
-          <Route path='/new-place' element={<NewPlace />} />
+          <Route path='/add-new-place' element={<NewPlace />} />
           <Route path='/favorites' element={<Favorites />} />
         </Routes>
 
