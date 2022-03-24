@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 import FavoriteContext from "./FavoriteContext";
 import location from '../db/location.json';
 import { toast } from 'react-toastify';
@@ -16,7 +16,7 @@ export const PlaceContextProvider = (props) => {
 
     // For FireBase DB 
     // const [allLocations, setAllLocations] = useState([]);
-    const [fireBaseDataLoading, setFireBaseDataLoading] = useState(false);
+    // const [fireBaseDataLoading, setFireBaseDataLoading] = useState(false);
 
     const [editInfo, setEditInfo] = useState({});
 
@@ -31,6 +31,8 @@ export const PlaceContextProvider = (props) => {
     FireBase DB Communication Methods... 
     ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
     */
+
+/*
     const url = 'https://addlocation-db-default-rtdb.firebaseio.com/';
 
     useEffect(() => {
@@ -117,7 +119,7 @@ export const PlaceContextProvider = (props) => {
         getAllLocationFromFirebase();
     }
 
-
+*/
 
 
 
@@ -183,7 +185,7 @@ export const PlaceContextProvider = (props) => {
     }
 
     const placeCIX = {
-        fireBaseDataLoading,
+        // fireBaseDataLoading,
 
         allLocations,
         addLocation: addLocationHandler,

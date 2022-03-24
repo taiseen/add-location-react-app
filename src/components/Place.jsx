@@ -17,7 +17,7 @@ const Place = ({ place, deleteLocation, addFav, isFav, removeFav, editLocation }
 
     return (
 
-        <div className="bg-gray-300  rounded shadow-md text-center pb-4">
+        <div className="bg-gray-300 rounded shadow-md text-center pb-4">
 
             <img src={imgUrl} alt={title}
                 className="aspect-video rounded-t w-full object-cover " />
